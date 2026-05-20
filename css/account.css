@@ -1,0 +1,211 @@
+/* --- DASHBOARD ACCOUNT --- */
+#sidebar {
+    min-height: calc(100vh - 100px);
+    z-index: 100;
+}
+
+#sidebar .nav-link {
+    border-radius: 8px;
+    padding: 12px 15px;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+#sidebar .nav-link:hover {
+    background: rgba(220, 53, 69, 0.1);
+}
+
+#sidebar .nav-link.active {
+    background-color: var(--brand-color) !important;
+}
+
+#sidebar .nav-link.active, 
+#sidebar .nav-link.active i {
+    color: white !important;
+}
+
+/* Custom Table Style */
+.table {
+    font-size: 0.9rem;
+}
+
+.table thead th {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.5);
+    border-bottom: 2px solid #333;
+}
+
+.table img {
+    object-fit: contain;
+    padding: 2px;
+}
+
+/* Colori e Stile Tabelle */
+.custom-table-container {
+    background: #1a1a1a; /* Grigio molto scuro invece del nero assoluto */
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 15px;
+    overflow: hidden;
+}
+
+.table-dark {
+    --bs-table-bg: transparent;
+    --bs-table-hover-bg: none
+    margin-bottom: 0;
+}
+
+.table-dark thead th {
+    border-bottom: 2px solid var(--brand-color) !important; /* Linea rossa sotto l'header */
+    color: var(--brand-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.btn-outline-warning{
+    color: white;
+    border-color: white;
+}
+
+.btn-outline-warning:hover{
+    color: white;
+    border-color: var(--brand-color);
+    background-color: var(--brand-color);
+}
+
+.swal2-select {
+    background-color: #1a1a1a !important; /* Sfondo scuro (simile a --br-dark) */
+    color: white !important;              /* Testo bianco */
+    border: 1px solid #444 !important;    /* Bordino per visibilità */
+    border-radius: 8px !important;
+}
+
+/* Correzione per le singole opzioni dentro la tendina */
+.swal2-select option {
+    background-color: #1a1a1a !important;
+    color: white !important;
+}
+
+/* Focus sulla tendina */
+.swal2-select:focus {
+    outline: none !important;
+    border-color: var(--brand-color) !important;
+    box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.25) !important;
+}
+
+/* RESPONSIVE: Table Stack per Mobile */
+
+
+@media (max-width: 991px) {
+    /* Nascondiamo l'header della tabella */
+    .table-responsive thead {
+        display: none;
+    }
+
+    /* Trasformiamo ogni elemento della tabella in un blocco */
+    .table-responsive table, 
+    .table-responsive tbody, 
+    .table-responsive tr, 
+    .table-responsive td {
+        display: block;
+        width: 100%;
+    }
+
+    /* Ogni riga (tr) diventa una card separata */
+    .table-responsive tr {
+        margin-bottom: 1.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    /* Ogni cella (td) si comporta come una riga di testo */
+    .table-responsive td {
+        text-align: right;
+        padding-left: 40% !important; /* Ridotto un po' per dare spazio */
+        position: relative;
+        border: none !important;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        min-height: 50px; /* Evita collassi se la cella è vuota */
+    }
+
+    /* Allineamento specifico per la cella dello STRUMENTO */
+    .table-responsive td[data-label="Strumento"] .d-flex {
+        flex-direction: row-reverse !important; /* Inverte immagine e testo */
+        justify-content: flex-start !important; /* Li tiene attaccati al bordo destro */
+    }
+
+    .table-responsive td[data-label="Strumento"] img {
+        margin-right: 0 !important;
+        margin-left: 10px; /* Margine a sinistra ora che è a destra del testo */
+    }
+
+    .table-responsive td[data-label="Strumento"] .text-end {
+        text-align: right !important;
+    }
+
+    /* Centriamo solo l'ultima cella delle Azioni per pulizia visiva */
+    .table-responsive td:last-child {
+        text-align: center;
+        padding-left: 0 !important;
+        background: rgba(255, 255, 255, 0.03);
+        margin-top: 5px;
+    }
+
+    /* Inseriamo l'etichetta (ID, Prezzo, etc) usando l'attributo data-label */
+    .table-responsive td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        text-align: left;
+        font-weight: bold;
+        color: rgba(255, 255, 255, 0.5);
+        text-transform: uppercase;
+        font-size: 0.75rem;
+    }
+
+    /* Eccezione per le celle con immagini o bottoni che vogliamo centrate */
+    .table-responsive td:first-child,
+    .table-responsive td:last-child {
+        text-align: center;
+        padding-left: 0 !important;
+        background: rgba(255, 255, 255, 0.03);
+        margin-top: 5px;
+    }
+    
+    .table-responsive td:first-child::before,
+    .table-responsive td:last-child::before {
+        display: none; /* Nascondi etichetta per ID e Azioni se preferisci */
+    }
+
+    #sidebar {
+        min-height: auto;
+        border-right: none !important;
+        border-bottom: 1px solid #333;
+    }
+
+    .content-section h3 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .btn-sm {
+        padding: 8px 12px;
+    }
+}
+
+
+/* Scrollbar per l'editor SweetAlert */
+.custom-editor::-webkit-scrollbar {
+    width: 6px;
+}
+.custom-editor::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 10px;
+}

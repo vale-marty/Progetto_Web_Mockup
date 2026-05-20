@@ -1,0 +1,213 @@
+/* --- PAGINA PRODOTTO SINGOLO --- */
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "/";
+    color: #444;
+}
+
+.breadcrumb-item a {
+    transition: color 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.75rem;
+}
+
+.breadcrumb-item a:hover {
+    color: #fff !important;
+}
+
+/* Spinner animato */
+.spinner-outer {
+    position: relative;
+    padding: 10px;
+}
+
+/* Effetto di pulsazione dietro lo spinner */
+.spinner-outer::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(220, 53, 69, 0.2);
+    border-radius: 50%;
+    animation: pulse-danger 1.5s infinite;
+}
+
+@keyframes pulse-danger {
+    0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.8; }
+    100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+}
+
+/* Utility per il testo di caricamento */
+.letter-spacing-2 {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+/* Transizione fluida quando il contenuto viene inserito */
+#prodotto-container {
+    animation: fadeInContent 0.6s ease-in-out;
+}
+
+@keyframes fadeInContent {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+/* Contenitore Immagine e Sticky Fix */
+.product-image-container {
+    transition: all 0.3s ease;
+}
+
+.zoom-image {
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.zoom-image:hover {
+    transform: scale(1.05);
+}
+
+/* Titolo e Marca */
+.display-4 {
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    font-family: var(--font-title); 
+}
+
+/* Action Box (Il blocco prezzi) */
+.action-box {
+    background: #121212 !important; /* Un tono più scuro */
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 12px !important;
+}
+.action-box > div {
+    padding: 2rem !important;
+    transition: all 0.3s ease;
+}
+
+/* Effetto focus sulla sezione acquisto */
+.action-box > div:first-child {
+    background: linear-gradient(145deg, #1a1a1a 0%, #121212 100%);
+}
+
+/* Stile per i prezzi */
+.action-box h2, .action-box h3 {
+    font-size: 2.8rem !important;
+    letter-spacing: -1px;
+    margin-bottom: 0;
+}
+
+/* Parte Noleggio - Accentatura */
+.action-box .border-top {
+    background: linear-gradient(180deg, rgba(220, 53, 69, 0.05) 0%, transparent 100%);
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Input Quantità Personalizzato */
+.custom-qty {
+    background: #000;
+    border: 1px solid #333 !important;
+    border-radius: 8px !important;
+    overflow: hidden;
+    height: 54px; /* Altezza fissa per allinearsi ai bottoni */
+}
+
+.custom-qty .btn {
+    border: none !important;
+    background: transparent !important;
+    color: #fff !important;
+    width: 40px !important;
+    font-size: 1.2rem;
+}
+
+.custom-qty .btn:hover {
+    color: #dc3545 !important;
+}
+
+.custom-qty input {
+    border: none !important;
+    background: transparent !important;
+    font-size: 1.1rem !important;
+    font-weight: bold !important;
+    width: 50px !important;
+    pointer-events: none; /* Evita tastiera su mobile se non serve */
+}
+
+/* Bottoni */
+.btn-outline-red {
+    color: var(--brand-color);
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px !important;
+    border: 2px solid var(--brand-color) !important;
+    font-weight: 700 !important;
+}
+
+.btn-outline-red:hover{
+    background-color: var(--brand-color);
+    color: var(--text-main);
+}
+
+.btn-outline-light {
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px !important;
+    border: 2px solid #fff !important;
+    font-weight: 700 !important;
+}
+
+/* Badge Disponibilità */
+.badge {
+    padding: 8px 12px !important;
+    font-size: 0.7rem !important;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 4px !important;
+}
+
+/* Scheda Tecnica */
+.specifiche {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+/* Assicurati che il contenitore delle card non esca dai bordi */
+.spec-item {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    height: 100%;
+    /* Evita che bordi o padding dilatino la card */
+    box-sizing: border-box; 
+}
+
+/* Fix per Mobile */
+@media (max-width: 767px) {
+    .specifiche {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .spec-item {
+        margin-bottom: 10px; /* Gestito da g-3 di Bootstrap */
+    }
+}
+
+/* Titolo con linea rossa */
+h4.border-danger {
+    border-bottom: 3px solid var(--brand-color) !important;
+    display: inline-block; /* Meglio di table per questo caso */
+    padding-right: 50px;
+    margin-left: 0; /* Assicura allineamento a sinistra */
+}

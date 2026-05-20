@@ -1,0 +1,30 @@
+@import url('variables.css');
+@import url('navbar.css');
+@import url('footer.css');
+@import url('home.css');
+@import url('scuole.css');
+@import url('prodotti.css');
+@import url('prodotto-singolo.css');
+@import url('carrello.css');
+@import url('registrazione.css');
+@import url('account.css');
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.bg-light{
+    background-color: var(--bg-light) !important;
+}
+
+.bg-dark{
+    background-color: var(--bg-dark) !important; 
+}
+
+.text-danger{
+    color: var(--brand-color) !important;
+}
+

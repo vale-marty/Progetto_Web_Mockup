@@ -1,0 +1,40 @@
+/* Stile base per entrambi i bottoni */
+.btn-outline-danger {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    border-width: 2px !important;
+}
+
+/* Quando il bottone ha la classe .active (aggiunta dal JS) */
+#btnPrivato.active, #btnScuola.active {
+    background-color: var(--brand-color) !important; 
+    color: white !important;
+    box-shadow: 0 0 20px rgba(220, 53, 69, 0.6) !important; 
+    
+}
+
+/* Effetto al passaggio per i bottoni NON attivi */
+.btn-outline-danger:hover:not(.active) {
+    background-color: rgba(220, 53, 69, 0.1) !important;
+    color: var(--brand-color) !important;
+}
+
+.logo-form{
+    max-height: 50px;
+}
+
+.btn-danger:disabled {
+    background-color: var(--brand-color) !important;
+    
+}
+
+.reg-card{
+    background-color: var(--bg-light) !important;
+    max-width: 700px !important;
+}
+
+
+.reg-page{
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+

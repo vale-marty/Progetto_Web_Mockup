@@ -1,0 +1,219 @@
+
+/* --- SEZIONE RICERCA E FILTRI --- */
+.search-filter-section {
+    background: linear-gradient(180deg, #0b0b0b 0%, #151515 100%) !important;
+    border-bottom: 1px solid rgba(220, 53, 69, 0.2);
+}
+
+/* Tab di Macro-Categoria (Bottoni) */
+.filter-tab {
+    border-width: 2px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 25px;
+    transition: all 0.3s ease;
+}
+
+.filter-tab.active, .filter-tab:hover {
+    background-color: var(--brand-color) !important;
+    border-color: var(--brand-color) !important;
+    color: white !important;
+    box-shadow: 0 0 15px rgba(220, 53, 69, 0.4);
+}
+
+.btn-outline-danger{
+    border-color: var(--brand-color) !important;
+    color: var(--brand-color);
+}
+
+.btn-reset {
+    color: #888;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: transparent;
+    border: 1px solid #333;
+    padding: 10px 20px;
+    transition: all 0.3s;
+    width: 100%;
+    height: 45px;
+}
+
+.btn-reset:hover {
+    color: #fff;
+    border-color: #fff;
+    background: rgba(255,255,255,0.05);
+}
+
+
+
+/* Input, Select e Range Custom */
+.search-filter-section .form-control, 
+.search-filter-section .form-select,
+.search-filter-section .input-group-text {
+    border-color: #333 !important;
+    padding: 12px;
+    font-size: 0.9rem;
+}
+
+.search-filter-section .form-control:focus, 
+.search-filter-section .form-select:focus {
+    border-color: var(--brand-color) !important;
+    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+    background-color: #000;
+    color: #fff;
+}
+
+/* Styling del Range (Slider) */
+#rentRange::-webkit-slider-runnable-track {
+    background: #333;
+    height: 6px;
+    border-radius: 3px;
+}
+
+#rentRange::-webkit-slider-thumb {
+    background: var(--brand-color);
+    border: none;
+    width: 18px;
+    height: 18px;
+    margin-top: -6px; /* Centra il cerchio sulla linea */
+    box-shadow: 0 0 10px rgba(220, 53, 69, 0.5);
+}
+
+#priceRange::-webkit-slider-runnable-track {
+    background: #333;
+    height: 6px;
+    border-radius: 3px;
+}
+
+#priceRange::-webkit-slider-thumb {
+    background: var(--brand-color);
+    border: none;
+    width: 18px;
+    height: 18px;
+    margin-top: -6px; /* Centra il cerchio sulla linea */
+    box-shadow: 0 0 10px rgba(220, 53, 69, 0.5);
+}
+
+.btn-reset{
+    height: 47px;
+}
+
+
+@media (max-width: 991px) {
+    .btn-reset{
+        margin-top: 30px !important;
+    }
+}
+
+
+
+/* --- GRID PRODOTTI --- */
+#main-catalogo {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Messaggio Nessun Risultato */
+#noResults i {
+    opacity: 0.3;
+    filter: grayscale(1);
+}
+
+#noResults h3 {
+    font-family: var(--font-title);
+    letter-spacing: 1px;
+}
+
+/* Animazione per il conteggio prodotti */
+#productCount {
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+
+/* --- PRODUCT CARD  --- */
+.product-card {
+    background-color: var(--bg-light);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    
+    border-color: var(--brand-color);
+    box-shadow: 0 10px 30px rgba(220, 53, 69, 0.2);
+}
+
+/* Gestione Immagine */
+.img-container {
+    padding: 0; 
+    height: 300px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #111; 
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center bottom; 
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.product-card:hover .img-container img {
+    
+    transform: scale(1.15); 
+}
+
+.product-card-body {
+    padding: 20px;
+}
+
+/* Dettagli Testo */
+.brand-label {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: var(--brand-color);
+    letter-spacing: 1px;
+}
+
+.product-title {
+    color: #fff;
+    font-family: var(--font-title);
+    margin: 5px 0 10px 0;
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+.product-desc {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.6);
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Taglia il testo dopo 2 righe per uniformità */
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.product-price {
+    font-size: 25px;
+    font-weight: 800;
+    color: #fff;
+}
+
+

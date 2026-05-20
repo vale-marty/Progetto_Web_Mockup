@@ -1,0 +1,72 @@
+/* NAVBAR */
+
+.navbar, .navbar-collapse{
+    background-color: var(--bg-dark) !important;
+}
+
+.nav-link {
+    display: inline-block; 
+}
+
+.nav-item{
+    font-family: var(--font-title);
+    font-size: 24px;
+    letter-spacing: 1px;
+    color: var(--text-main);
+    margin-left: 20px;
+}
+
+.navbar-nav .nav-link {
+    display: inline-block; 
+    width: fit-content;
+    position: relative; 
+    padding-bottom: 3px; 
+    color: var(--text-main) !important;
+}
+
+.navbar-nav .nav-link.active::after {
+    content: ""; 
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100% !important;        
+    height: 3px;       
+    background-color: var(--brand-color); 
+    border-radius: 2px; 
+}
+
+.navbar-nav .nav-link:not(.active)::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;          
+    height: 3px;
+    background-color: var(--brand-color);
+    transition: width 0.3s ease-in-out; 
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;      
+}
+
+.bi-person{
+    color: var(--brand-color);
+}
+
+.bi-person, .bi-cart {
+    margin: 0 4px;
+}
+
+.navbar-toggler{
+    border: none !important;
+    font-size: 17px;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}

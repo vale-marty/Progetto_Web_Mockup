@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock N' Bass | Negozio di Bassi</title>
+    <link rel="icon" type="image/png" href="assets/images/logo/logo_nav.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container-fluid px-4">
+                
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/images/logo/logo_nav.png" alt="Logo" height="50">
+                </a>
+
+                <div class="d-flex align-items-center order-lg-3">
+                    <a href="login.html" id="navAccountIcon" class="text-danger mx-2"><i class="bi bi-person fs-4"></i></a>
+                    <a href="carrello.html" class="text-white mx-2 position-relative">
+                        <i class="bi bi-cart fs-4"></i>
+                        <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.6rem; display: none;">
+                            0
+                        </span>
+                    </a>
+                    
+                    <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarRock">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse order-lg-2" id="navbarRock">
+                    <ul class="navbar-nav mx-auto text-start text-lg-center">
+                        <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" href="scuole.html">SCUOLE</a></li>
+                        <li class="nav-item"><a class="nav-link" href="prodotti.html">PRODOTTI</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contatti.html">CONTATTI</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container-fluid pt-5 mt-5 bg-dark min-vh-100">
+        <div class="d-md-none p-3 border-bottom border-secondary bg-black">
+            <button class="btn btn-outline-danger w-100 d-flex justify-content-between align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar">
+                <span><i class="bi bi-list me-2"></i>Menu Account</span>
+                <i class="bi bi-chevron-down"></i>
+            </button>
+        </div>
+
+        <div class="row">
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-black sidebar collapse border-end border-secondary shadow">
+                <div class="position-sticky pt-3 h-100">
+                    <div class="px-3 mb-4 text-center d-none d-md-block">
+                        <i class="bi bi-person-circle text-danger fs-1"></i>
+                        <h6 class="text-white mt-2 mb-0" id="userNameDisplay"></h6>
+                        <small class="text-white-50" id="userRoleBadge">Ruolo</small>
+                    </div>
+                    
+                    <ul class="nav flex-column gap-2 px-2" id="sidebarMenu">
+                        </ul>
+
+                    <hr class="text-secondary mx-3">
+                    <div class="px-3 pb-5">
+                        <button onclick="logout()" class="btn btn-outline-danger btn-sm w-100">
+                            <i class="bi bi-box-arrow-right me-2"></i>Logout
+                        </button>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
+                <div id="content-area" class="text-white">
+                    <div id="welcome-screen" class="text-center py-5 mt-md-5">
+                        <h1 class="display-4 fw-bold">Benvenuto nell'area <span class="text-danger">Rock N' Bass</span></h1>
+                        <p class="text-white-50 fs-5">Seleziona una voce dal menu per iniziare a gestire il tuo profilo.</p>
+                    </div>
+
+                    <section id="section-catalogo" class="content-section d-none">
+                        <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-3 mb-4">
+                            <h3 class="m-0">Gestione Inventario</h3>
+                            <button class="btn btn-danger" onclick="apriEditorProdotto()">+ Aggiungi Strumento</button>
+                        </div>
+                        <div class="table-responsive bg-black p-2 p-md-3 rounded border border-secondary shadow-sm">
+                            <table class="table table-dark table-hover align-middle mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Strumento</th>
+                                        <th>Prezzo</th>
+                                        <th>Stato</th>
+                                        <th class="text-center">Azioni</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-table-body"></tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section id="section-ordini" class="content-section d-none">
+                        <h3 class="mb-4">Storico Acquisti</h3>
+                        <div id="ordini-container">
+                            </div>
+                    </section>
+
+                    <section id="section-noleggi" class="content-section d-none">
+                        <h3 class="mb-4">Gestione Noleggi</h3>
+                        <div id="noleggi-container">
+                            </div>
+                    </section>
+
+                    <section id="section-contatti" class="content-section d-none">
+                        <h3 class="mb-4">Richieste Form</h3>
+                        <div id="richieste-container">
+                            </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <footer class="footer-section pt-5 pb-3">
+        <div class="container ">
+            <div class="d-flex align-items-center justify-content-center text-center footer-links mx-auto">
+                <a href="index.html">home</a>
+                <a href="scuole.html">scuola</a>
+                <a href="prodotti.html">prodotti</a>
+                <a href="contatti.html">contatti</a>
+
+            </div>
+
+            <hr class="mt-3 mb-4 border-secondary">
+
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="text-white-50 mb-0 small">&copy; 2026 ROCK N' BASS. All Rights Reserved. Created with Passion.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/dati.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/account.js"></script>
+    <!--script per modificare l'allert-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>

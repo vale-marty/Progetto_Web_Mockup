@@ -1,0 +1,137 @@
+/* --- STILE CARD CARRELLO --- */
+
+.card.bg-dark.overflow-hidden {
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    transition: transform 0.2s ease;
+}
+
+
+.input-group.justify-content-center {
+    background: transparent !important; 
+    border: 1px solid var(--text-main) !important;    
+    border-radius: 5px;         
+    width: fit-content !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 0px; /* Spazio tra i simboli senza usare bordi */
+    padding: 2px;
+    height: 33px;
+}
+
+/* Stile per i tasti - e + */
+.input-group.justify-content-center .btn-outline-secondary {
+    border: none !important;
+    background: transparent !important;
+    color: var(--text-main) !important; /* Colore sobrio di base */
+    padding: 0 10px !important;
+    font-size: 1.2rem !important; /* Leggermente più grandi per essere cliccabili */
+    font-weight: 300 !important;
+    transition: all 0.2s ease;
+    min-width: 25px;
+    height: 35px !important; /* Altezza fissa per un look più solido */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Effetto al passaggio sui simboli */
+.input-group.justify-content-center .btn-outline-secondary:hover {
+    color: var(--brand-color) !important;
+    background: transparent !important;
+    transform: scale(1.2); /* Leggero zoom per feedback visivo */
+}
+
+/* Numero centrale */
+.input-group.justify-content-center span {
+    border: none !important; /* Rimosse le linee verticali di separazione */
+    color: var(--brand-color) !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    min-width: 25px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: transparent !important;
+}
+
+/* --- BLOCCO PREZZO E RIMUOVI --- */
+.text-end .fw-bold.fs-5 {
+    color: white;
+    letter-spacing: -0.5px;
+}
+
+/* Tasto rimuovi più discreto */
+.btn.text-danger.mt-2 {
+    font-size: 0.7rem !important;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 0;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.btn.text-danger.mt-2:hover {
+    opacity: 1;
+    background: transparent;
+}
+
+/* Badge Noleggio/Acquisto */
+.badge.bg-info {
+    background-color: #1203ec !important; /* Colore noleggio (ciano) */
+    font-size: 0.65rem;
+}
+
+.badge.bg-danger {
+    font-size: 0.65rem;
+    background-color: var(--brand-color) !important;
+}
+
+.col-6.col-md-2.p-3.text-center {
+    padding: 10px !important;
+}
+
+/* Allineamento verticale dei blocchi su mobile */
+@media (max-width: 767px) {
+    /* Il contenitore dell'immagine rimane piccolo a sinistra */
+    .col-3.col-md-2 {
+        width: 25% !important;
+    }
+    
+    /* Il corpo del testo occupa il resto della riga superiore */
+    .col-6.col-md-5 {
+        width: 75% !important;
+        padding-bottom: 0 !important;
+    }
+
+    /* Spostiamo contatore e prezzo su una nuova riga visiva o diamo più spazio */
+    .col-6.col-md-2, 
+    .col-6.col-md-3 {
+        width: 50% !important;
+        padding-top: 10px !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    /* Allineamento specifico per il blocco prezzo a destra */
+    .text-end {
+        align-items: flex-end;
+    }
+
+    .input-group.justify-content-center {
+        gap: 8px; /* Più spazio per il touch su mobile */
+    }
+}
+
+@media (max-width: 992px) {
+    /* Assicuriamoci che anche su desktop piccolo non si rompa */
+    .col-md-2 {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+}
