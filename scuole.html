@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock N' Bass | Negozio di Bassi</title>
+    <link rel="icon" type="image/png" href="assets/images/logo/logo_nav.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container-fluid px-4">
+                
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/images/logo/logo_nav.png" alt="Logo" height="50">
+                </a>
+
+                <div class="d-flex align-items-center order-lg-3">
+                    <a href="login.html" id="navAccountIcon" class="text-danger mx-2"><i class="bi bi-person fs-4"></i></a>
+                    <a href="carrello.html" class="text-white mx-2 position-relative">
+                        <i class="bi bi-cart fs-4"></i>
+                        <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.6rem; display: none;">
+                            0
+                        </span>
+                    </a>
+                    
+                    <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarRock">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse order-lg-2" id="navbarRock">
+                    <ul class="navbar-nav mx-auto text-start text-lg-center">
+                        <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="scuole.html">SCUOLE</a></li>
+                        <li class="nav-item"><a class="nav-link" href="prodotti.html">PRODOTTI</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contatti.html">CONTATTI</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section scuole d-flex align-items-center justify-content-center text-center">
+            <div class="container position-relative">
+                <h1 class="display-3 fw-bold text-white">Service for <span class="text-danger">EDUCATION</span></h1>
+                <p class="lead text-white">Sosteniamo i bassisti di domani con strumenti di qualità alla portata di tutti.</p>
+            </div>
+        </section>
+
+        <section class="py-5 noleggio-about bg-dark">
+            <div class="container py-5">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 about-noleggio">
+                        <h2 class="display-5 fw-bold text-danger mb-4">Noleggio bassi <br><span class="text-white">per scuole di musica</span></h2>
+                        <p class="text-white-50 lead">
+                            ROCK N' BASS collabora con scuole di musica, accademie e istituti offrendo un servizio di noleggio bassi dedicato esclusivamente al mondo della formazione.L'obiettivo è permettere agli studenti di studiare con strumenti affidabili e ben regolati, riducendo i costi iniziali di acquisto.
+                        </p>
+                        <p class="text-white-50 lead">
+                            Il servizio di noleggio è pensato per le scuole che desiderano mettere a disposizione dei propri studenti strumenti pronti all'uso e costantemente controllati. <br>
+                            Ogni basso viene consegnato <span class="text-danger fw-bold">verificato</span> e <span class="text-danger fw-bold">regolato</span>, per garantire comfort e qualità durante lo studio.
+                        </p>
+                        <a href="contatti.html" class="btn btn-danger btn-lg px-4">Richiedi informazioni</a>
+                    </div>
+                    <div class="col-lg-6 noleggio-img-container">
+                        <img src="assets/images/noleggio.jpg" alt="" class="img-noleggio shadow-lg d-flex align-items-center justify-content-center">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5 bg-light steps-section"> 
+            <div class="container py-5">
+                <h2 class="display-5 fw-bold text-white text-center">
+                    Il Percorso in <span class="text-danger">4 Step</span>
+                </h2>
+                <div class="header-line mx-auto"></div>
+                <div class="row g-4 mt-5 steps bg-dark">
+                    <!-- Step 1 -->
+                    <div class="col-12 col-sm-6 col-lg-3 text-center step-item">
+                        <div class="step-number">1</div>
+                        <h5 class="text-white">Registrazione</h5>
+                        <p class="small text-white-50">Crea il profilo della tua scuola e accedi ai servizi esclusivi.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="col-12 col-sm-6 col-lg-3 text-center step-item">
+                        <div class="step-number">2</div>
+                        <h5 class="text-white">Configurazione</h5>
+                        <p class="small text-white-50">Seleziona la tua flotta di bassi e definisci la durata.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="col-12 col-sm-6 col-lg-3 text-center step-item">
+                        <div class="step-number">3</div>
+                        <h5 class="text-white">Setup e Consegna</h5>
+                        <p class="small text-white-50">Settiamo ogni strumento e lo consegniamo pronto all'uso.</p>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="col-12 col-sm-6 col-lg-3 text-center step-item">
+                        <div class="step-number">4</div>
+                        <h5 class="text-white">Inizia a suonare</h5>
+                        <p class="small text-white-50">I tuoi allievi suoneranno con il meglio del mercato.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-2 mb-5">
+                <p class="text-white mb-3">Sei pronto a dotare la tua scuola dei migliori strumenti?</p>
+                <a href="registrazione.html" class="btn btn-danger btn-lg px-5 py-3">
+                    REGISTRA LA TUA SCUOLA ORA
+                </a>
+            </div>
+        </section>
+
+        <section class="py-5 bg-dark">
+            <div class="container py-5">
+                <h2 class="display-5 fw-bold text-white text-center">
+                    Perchè <span class="text-danger">Sceglierci</span>
+                </h2>
+                <div class="header-line mx-auto"></div>
+                
+                <div class="row g-4 mt-5">
+                    <!-- Card 1 -->
+                    <div class="col-md-6">
+                        <div class="service-card-school h-100 p-4">
+                            <div class="d-flex align-items-start">
+                                <i class="bi bi-award text-danger fs-1 me-4"></i>
+                                <div>
+                                    <h4 class="text-white fw-bold">Qualità Garantita</h4>
+                                    <p class="text-white-50 mb-0">Ogni allievo merita un basso settato alla perfezione. Uno strumento che suona bene motiva lo studente invece di scoraggiarlo.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 2 -->
+                    <div class="col-md-6">
+                        <div class="service-card-school h-100 p-4">
+                            <div class="d-flex align-items-start">
+                                <i class="bi bi-tools text-danger fs-1 me-4"></i>
+                                <div>
+                                    <h4 class="text-white fw-bold">Zero Pensieri</h4>
+                                    <p class="text-white-50 mb-0">Manutenzione periodica e setup inclusi. Se sorge un problema, il nostro laboratorio interviene con priorità assoluta.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 3 -->
+                    <div class="col-md-6">
+                        <div class="service-card-school h-100 p-4">
+                            <div class="d-flex align-items-start">
+                                <i class="bi bi-cash-coin text-danger fs-1 me-4"></i>
+                                <div>
+                                    <h4 class="text-white fw-bold">Prezzi Ridotti</h4>
+                                    <p class="text-white-50 mb-0">Listini dedicati alle scuole, sensibilmente inferiori ai prezzi di mercato. Crediamo nella didattica.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 4 -->
+                    <div class="col-md-6">
+                        <div class="service-card-school h-100 p-4">
+                            <div class="d-flex align-items-start">
+                                <i class="bi bi-shield-check text-danger fs-1 me-4"></i>
+                                <div>
+                                    <h4 class="text-white fw-bold">Assicurazione Inclusa</h4>
+                                    <p class="text-white-50 mb-0">Copertura contro danni accidentali. Gli allievi possono imparare e fare pratica in totale serenità.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>  
+
+    <footer class="footer-section pt-5 pb-3">
+        <div class="container ">
+            <div class="d-flex align-items-center justify-content-center text-center footer-links mx-auto">
+                <a href="index.html">home</a>
+                <a href="scuole.html">scuola</a>
+                <a href="prodotti.html">prodotti</a>
+                <a href="contatti.html">contatti</a>
+
+            </div>
+
+            <hr class="mt-3 mb-4 border-secondary">
+
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="text-white-50 mb-0 small">&copy; 2026 ROCK N' BASS. All Rights Reserved. Created with Passion.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>

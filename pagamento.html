@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock N' Bass | Catalogo Bassi</title>
+    <link rel="icon" type="image/png" href="assets/images/logo/logo_nav.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container-fluid px-4">
+                
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/images/logo/logo_nav.png" alt="Logo" height="50">
+                </a>
+
+                <div class="d-flex align-items-center order-lg-3">
+                    <a href="login.html" id="navAccountIcon" class="text-danger mx-2"><i class="bi bi-person fs-4"></i></a>
+                    <a href="carrello.html" class="text-white mx-2 position-relative">
+                        <i class="bi bi-cart fs-4"></i>
+                        <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.6rem; display: none;">
+                            0
+                        </span>
+                    </a>
+                    
+                    <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarRock">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse order-lg-2" id="navbarRock">
+                    <ul class="navbar-nav mx-auto text-start text-lg-center">
+                        <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" href="scuole.html">SCUOLE</a></li>
+                        <li class="nav-item"><a class="nav-link" href="prodotti.html">PRODOTTI</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contatti.html">CONTATTI</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-5 mt-5 bg-dark min-vh-100">
+        <section class="py-5 bg-dark">
+            <div class="container py-3 mb-0 pb-0">
+                <a href="carrello.html" class="text-danger text-decoration-none"><i class="bi bi-arrow-left pe-2"></i>Torna al carrello</a>
+            </div>
+            <div class="container py-5">
+                <form id="paymentForm" onsubmit="event.preventDefault(); confermaOrdine();">
+                    <div class="row g-5">
+                        <div class="col-lg-8">
+                            <h2 class="text-white mb-2">Finalizza l'<span class="text-danger">Ordine</span></h2>
+                            <p class="text-success mb-5">Spedizione e primo set-up incluso nel prezzo</p>
+                            
+                            <div class="bg-dark p-4 rounded border border-secondary mb-5">
+                                <h5 class="text-white mb-5"><i class="bi bi-truck me-2 text-danger"></i>Spedizione e Contatti</h5>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="text-white-50 small mb-2">Nome</label>
+                                        <input type="text" id="payNome" class="form-control bg-transparent text-white border-secondary" required placeholder="Mario">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="text-white-50 small mb-2">Cognome</label>
+                                        <input type="text" id="payCognome" class="form-control bg-transparent text-white border-secondary" required placeholder="Rossi">
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="text-white-50 small mb-2">Email</label>
+                                        <input type="email" id="payEmail" class="form-control bg-transparent text-white border-secondary" required placeholder="mail@esempio.it">
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="text-white-50 small mb-2">Indirizzo completo</label>
+                                        <input type="text" id="payIndirizzo" class="form-control bg-transparent text-white border-secondary" required placeholder="Milano, Via delle Note 12">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-dark p-4 rounded border border-secondary">
+                                <h5 class="text-white mb-5"><i class="bi bi-credit-card me-2 text-danger"></i>Dettagli Carta</h5>
+                                <div class="row g-3">
+                                    <div class="col-12">
+                                        <label class="text-white-50 small mb-2">Numero Carta</label>
+                                        <input type="text" id="payCard" class="form-control bg-transparent text-white border-secondary" placeholder="xxxx xxxx xxxx xxxx" 
+                                        required autocomplete="cc-number" maxlength="19">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="text-white-50 small mb-2">Scadenza</label>
+                                        <input type="text" id="payExp" class="form-control bg-transparent text-white border-secondary" placeholder="MM/AA" required 
+                                        autocomplete="cc-exp" maxlength="5">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="text-white-50 small mb-2">CVC</label>
+                                        <input type="text" id="payCvc" class="form-control bg-transparent text-white border-secondary" placeholder="123" required 
+                                        autocomplete="cc-csc" maxlength="3">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="sticky-top" style="top: 100px;">
+                                <div class="bg-dark p-4 rounded border border-danger shadow">
+                                    <h4 class="text-white mb-4">Riepilogo Ordine</h4>
+                                    <div id="checkout-items" class="mb-3"></div>
+                                    <div id="sconto" class="mb-2"></div>
+                                    <hr class="border-secondary mt-3">
+                                    <div class="d-flex justify-content-between align-items-center text-white fs-4 fw-bold mt-2">
+                                        <span>TOTALE</span>
+                                        <span class="text-danger" id="check-total">€ 0.00</span>
+                                    </div>
+                                    <button type="submit" class="btn btn-danger w-100 mt-4 py-3 text-uppercase">
+                                        Paga Ora
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-section pt-5 pb-3">
+        <div class="container ">
+            <div class="d-flex align-items-center justify-content-center text-center footer-links mx-auto">
+                <a href="index.html">home</a>
+                <a href="scuole.html">scuola</a>
+                <a href="prodotti.html">prodotti</a>
+                <a href="contatti.html">contatti</a>
+
+            </div>
+
+            <hr class="mt-3 mb-4 border-secondary">
+
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="text-white-50 mb-0 small">&copy; 2026 ROCK N' BASS. All Rights Reserved. Created with Passion.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/pagamento.js"></script>
+    <script src="js/main.js"></script>
+    <!--script per modificare l'allert-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
